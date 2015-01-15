@@ -50,10 +50,11 @@
     survey.addRatingPage(survey.createSurveyImage('images/glossblue.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
     survey.addRatingPage(survey.createSurveyImage('images/purplerect.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
     survey.setFinishPage('Thank you for completing the survey. You may drop your email address to get the survey results', true, function(mail){
+        console.log(mail);
         $.ajax({
             type: "POST",
             url: "http://ertank.com/save.php",
-            data: mail,
+            data: {"email",mail}
         }).fail(function(){
             console.log("failed")
         });
@@ -63,7 +64,7 @@
         $.ajax({
             type: "POST",
             url: "http://ertank.com/save.php",
-            data: data,
+            data: {"survey": data},
         });
     });
 </script>
