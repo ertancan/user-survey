@@ -54,7 +54,7 @@
         $.ajax({
             type: "POST",
             url: "http://ertank.com/save.php",
-            data: {"email",mail}
+            data: {"email":mail}
         }).fail(function(){
             console.log("failed")
         });
