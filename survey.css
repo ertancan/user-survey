@@ -1,0 +1,30 @@
+.survey-end-email{
+    margin: 5px;
+}
+.survey-image{
+    height: 600px;
+}
+.next-button{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 50px;
+}
+.select-button{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    width: 200px;
+    margin-top: 10px;
+}
+.centered-text{
+    text-align: center;
+}
+.survey-radio-label{
+   padding-right: 30px;
+    padding-top: 0px !important;
+}
+.survey-radio-inline{
+    display: inline-block;
+}

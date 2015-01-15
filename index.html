@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Mobile Trust Survey</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="survey.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header">
+        <h1>Mobile Application Trust Survey</h1>
+    </div>
+    <div class="main"></div>
+    <div class="page-header"></div>
+    <div class="actions"></div>
+    <div class="footer"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="survey.js"></script>
+<script type= "text/javascript" src = "countries.js"></script>
+<script type="text/javascript">
+    survey = UserSurvey;
+    survey.setContainer('.main');
+    survey.setActionsContainer('.actions');
+    survey.setStartPage('Welcome to the mobile trust survey. </br>This survey tries to measure the effects of design elements on the trustworthiness of a mobile application and takes around <b>2 minutes</b>'+
+    '</br>All data gathered from this survey will be anonymized and used on a research called  <b>“The Role of Design Elements and Aesthetics on Perceived Trustworthiness of a Mobile Application”</b>'+
+    '</br>If you submit your e-mail address after answering the questions you will receive the collected data and its analysis at the end of the research');
+    survey.addInfoPage(true,true,true,true);
+    survey.addRatingPage(survey.createSurveyImage('images/bluecircle.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addRatingPage(survey.createSurveyImage('images/dragonthebad.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addRatingPage(survey.createSurveyImage('images/glosspurple.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addRatingPage(survey.createSurveyImage('images/purplecircle.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addComparisonPage('You are going to transfer some funds to a person, but 2 applications display 2 different IBAN numbers. Which one would you trust?', survey.createSurveyImage('images/bluerect.png'), survey.createSurveyImage('images/bluecircle.png'));
+    survey.addComparisonPage('You wanted to know how many teeth do the imaginary Synapsid Dragons have, 1 of the applications says 34 and the other says 36. Which one is it?', survey.createSurveyImage('images/dragonthebad.png'), survey.createSurveyImage('images/dragonthegood.png'));
+    survey.addComparisonPage('You are going to transfer some funds to a person, but 2 applications display 2 different IBAN numbers. Which one would you trust?', survey.createSurveyImage('images/bluerect.png'), survey.createSurveyImage('images/purplerect.png'));
+    survey.addRatingPage(survey.createSurveyImage('images/bluerect.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addRatingPage(survey.createSurveyImage('images/dragonthegood.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addRatingPage(survey.createSurveyImage('images/graycircle.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addComparisonPage('You wonder at what degree the lumen power starts to shine. Again there is conflicted information on pages. Which one would you trust?', survey.createSurveyImage('images/glossblue.png'), survey.createSurveyImage('images/glosspurple.png'));
+    survey.addComparisonPage('You are going to transfer some funds to a person, but 2 applications display 2 different IBAN numbers. Which one would you trust?', survey.createSurveyImage('images/purplecircle.png'), survey.createSurveyImage('images/purplerect.png'));
+    survey.addComparisonPage('You wonder at what degree the lumen power starts to shine. Again there is conflicted information on pages. Which one would you trust?', survey.createSurveyImage('images/glossblue.png'), survey.createSurveyImage('images/bluesimple.png'));
+    survey.addRatingPage(survey.createSurveyImage('images/bluesimple.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addRatingPage(survey.createSurveyImage('images/grayrect.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addComparisonPage('You are going to transfer some funds to a person, but 2 applications display 2 different IBAN numbers. Which one would you trust?', survey.createSurveyImage('images/bluerect.png'), survey.createSurveyImage('images/grayrect.png'));
+    survey.addRatingPage(survey.createSurveyImage('images/glossblue.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.addRatingPage(survey.createSurveyImage('images/purplerect.png'), 'From 1 to 7, How trustworthy do you think the application is?', 7);
+    survey.setFinishPage('Thank you for completing the survey. You may drop your email address to get the survey results', true, function(mail){
+        console.log(mail);
+    });
+    survey.prepare();
+    survey.start(function(data){
+        console.log(data);
+    });
+</script>
+</body>
+</html>
