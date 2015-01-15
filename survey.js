@@ -30,8 +30,7 @@ var UserSurvey = (function(){
         progressContainer.appendTo(actions);
         nextButton.appendTo(actions);
         nextButton.click(function(){
-            if(nextButton.text()!="Next")
-                result['selection'].push(nextButton.text());
+            result['selection'].push(nextButton.text());
             _handleNext();
         });
     }
