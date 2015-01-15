@@ -122,6 +122,8 @@ var UserSurvey = (function(){
             mailSubmit.click(function(){
                 if(mailCallback)
                     mailCallback(mailInput.val());
+                mailInput.hide();
+                alert("Thank you! We will send you the results as soon as they are available!")
             });
             mailInput.appendTo(mailContainer);
             mailSubmit.appendTo(mailContainer);
