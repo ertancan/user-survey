@@ -54,6 +54,8 @@
             type: "POST",
             url: "http://ertank.com/save.php",
             data: mail,
+        }).fail(function(){
+            console.log("failed")
         });
     });
     survey.prepare();
